@@ -37,5 +37,8 @@ public void keyPressed(){
   if(key == 'q'){
      bob.accelerate(0.25);
     }
+  if(key == 'e'){
+     bob.brake();
+    }
   
 }
