@@ -28,4 +28,8 @@ class Spaceship extends Floater
     myYspeed = 0;
     myPointDirection = 0;
   }
+  public void brake(){
+    myXspeed = 0.9 * myXspeed;
+    myYspeed = 0.9 * myYspeed;
+  }
 }
