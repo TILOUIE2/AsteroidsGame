@@ -34,10 +34,10 @@ public void keyPressed(){
    bob.hyperspace() ; 
  }
  //accelerate  
-  if(key == 'q'){
+  if(key == 'w'){
      bob.accelerate(0.25);
     }
-  if(key == 'e'){
+  if(key == 's'){
      bob.brake();
     }
   
