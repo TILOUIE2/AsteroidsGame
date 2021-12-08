@@ -1,13 +1,16 @@
-Spaceship bob = new Spaceship();
 Star [] stars = new Star[150];
-double x = 0;
-double y = 0;
+Spaceship bob = new Spaceship();
+ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
+double distance;
 
 public void setup() 
 {
   size(500, 500);
   for(int i = 0; i < stars.length; i++){
    stars[i] = new Star(); 
+  }
+  for(int i = 0; i < 10; i++){
+   rock.add(new Asteroid());
   }
 }
 
@@ -19,6 +22,13 @@ public void draw()
   }
   bob.show();
   bob.move();
+  for(int i = 0; i < rock.size(); i++){
+  rock.get(i).show();
+  rock.get(i).move();
+  distance = dist((float)bob.getCenterX(), (float)bob.getCenterY(), (float)rock.get(i).getAsteroidX(), (float)rock.get(i).getAsteroidY());
+  if(distance <= 20)
+    rock.remove(rock.get(i));
+  }
 }
 
 public void keyPressed(){
@@ -31,7 +41,7 @@ public void keyPressed(){
  }
  //hyperspace
  if(key == ' '){
-   bob.hyperspace() ; 
+   bob.hyperspace(); 
  }
  //accelerate  
   if(key == 'w'){
@@ -40,5 +50,4 @@ public void keyPressed(){
   if(key == 's'){
      bob.brake();
     }
-  
 }
